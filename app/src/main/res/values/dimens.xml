@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="chili_pepper_size">12dp</dimen>
+    <dimen name="chili_pepper_margin">4dp</dimen>
+    <dimen name="vegetarian_icon_size">12dp</dimen>
+    <dimen name="ingredient_text_padding_horizontal">48dp</dimen>
+    <dimen name="ingredient_text_padding_vertical">16dp</dimen>
+</resources>

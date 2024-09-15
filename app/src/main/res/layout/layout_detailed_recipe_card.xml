@@ -1,0 +1,143 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!-- Vertical LinearLayout to organize child views vertically. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/holo_orange_dark">
+
+        <!-- Container for the recipe image and  elements like spice level indicators. -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/image_recipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_dark"
+            android:paddingTop="16dp">
+
+            <!-- Main recipe image. -->
+            <ImageView
+                android:id="@+id/image_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <!-- Icon indicating if the recipe is vegetarian. Visibility is controlled programmatically. -->
+            <ImageView
+                android:id="@+id/image_vegetarian"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_vegetarian"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/image_recipe"
+                app:layout_constraintTop_toTopOf="@id/image_recipe"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"/> <!-- This keeps the icon above other views -->
+
+            <!-- Label for spice levels -->
+            <TextView
+                android:id="@+id/text_spice_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spice levels:"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/image_recipe"
+                app:layout_constraintEnd_toStartOf="@id/chili_pepper_container"
+                app:layout_constraintBottom_toBottomOf="@id/chili_pepper_container"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+            <!-- Container for chili pepper icons. -->
+            <LinearLayout
+                android:id="@+id/chili_pepper_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/image_recipe"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp">
+                <!-- Chili peppers icons will be dynamically added here -->
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Title of the recipe. -->
+        <TextView
+            android:id="@+id/text_recipe_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <!-- Text displaying preparation time. -->
+        <TextView
+            android:id="@+id/text_prep_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dp"
+            android:textColor="@android:color/white"/>
+
+        <!-- Text displaying the number of servings. -->
+        <TextView
+            android:id="@+id/text_serves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/white"/>
+
+        <!-- Ingredients Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+        <!-- Ingredients List -->
+        <TextView
+            android:id="@+id/text_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:lineSpacingExtra="8dp"
+            android:paddingStart="24dp"/>
+
+
+        <!-- Instructions Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:paddingTop="16dp"/>
+
+        <!-- Instructions List -->
+        <TextView
+            android:id="@+id/text_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:paddingStart="24dp"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="32dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,83 @@
+<!-- Card layout for displaying individual recipes -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="0dp"
+    app:cardElevation="4dp">
+    <!-- Constraint layout to arrange components within the card. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@android:color/holo_orange_dark">
+        <!-- ImageView for the recipe image. -->
+        <ImageView
+            android:id="@+id/image_recipe"
+            android:layout_width="0dp"
+            android:layout_height="600dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <!-- TextView for displaying the recipe title. -->
+        <TextView
+            android:id="@+id/text_recipe_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/image_recipe"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp"/>
+        <!-- TextView for displaying preparation time. -->
+        <TextView
+            android:id="@+id/text_prep_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_recipe"
+            android:layout_marginTop="16dp"/>
+        <!-- TextView for displaying the number of servings. -->
+        <TextView
+            android:id="@+id/text_serves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serves: 4"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_prep_time"
+            android:layout_marginTop="8dp"/>
+
+        <!-- LinearLayout for automatically adding chili pepprs. -->
+        <LinearLayout
+            android:id="@+id/chili_pepper_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_prep_time"
+            android:layout_marginTop="16dp">
+        </LinearLayout>
+        <!-- ImageView for indicating if the recipe is vegetarian. -->
+        <ImageView
+            android:id="@+id/image_vegetarian"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_vegetarian"
+            android:visibility="visible"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
